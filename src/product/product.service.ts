@@ -33,7 +33,7 @@ export class ProductService {
     }
 
     async create(product: ProductEntity): Promise<ProductEntity> {
-        if (['Perecedero', 'No perecedero'].includes(product.type))
+        if (!['Perecedero', 'No perecedero'].includes(product.type))
             throw new BusinessLogicException(
                 'The product type is invalid',
                 BusinessError.PRECONDITION_FAILED,
@@ -51,7 +51,7 @@ export class ProductService {
                 'The product with the given id was not found',
                 BusinessError.NOT_FOUND,
             );
-        if (['Perecedero', 'No perecedero'].includes(product.type))
+        if (!['Perecedero', 'No perecedero'].includes(product.type))
             throw new BusinessLogicException(
                 'The product type is invalid',
                 BusinessError.PRECONDITION_FAILED,

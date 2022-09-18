@@ -14,7 +14,7 @@ export class StoreEntity {
     city:string
 
     @Column()
-    addres:string
+    address:string
 
     @ManyToMany(() => ProductEntity, product => product.stores)
     products: ProductEntity[];

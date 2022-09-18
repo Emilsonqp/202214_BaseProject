@@ -11,10 +11,10 @@ export class ProductEntity {
     name: string;
 
     @Column()
-    price:number
+    price:string;
 
     @Column()
-    type:string
+    type:string;
 
     @ManyToMany(() => StoreEntity, store => store.products)
     @JoinTable()
