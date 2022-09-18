@@ -16,7 +16,7 @@ export class ProductEntity {
     @Column()
     type:string;
 
-    @ManyToMany(() => StoreEntity, store => store.products)
+    @ManyToMany(() => StoreEntity, store => store.products, {cascade: true})
     @JoinTable()
     stores: StoreEntity[];
 }
